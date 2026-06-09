@@ -1,6 +1,9 @@
-.Mercado {
+.PUDIM {
 text-align: center;
-color: rgb(255, 255, 255);
+color: rgb(246, 246, 246);
 padding: 10px;
 background: radial-gradient(circle, #0e0857 0%, #1c6180 95%);
+}
+.INGREDIENTES {
+color: black;
 }
