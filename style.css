@@ -1,9 +1,15 @@
 .PUDIM {
-text-align: center;
-color: rgb(246, 246, 246);
-padding: 10px;
-background: radial-gradient(circle, #0e0857 0%, #1c6180 95%);
-}
-.INGREDIENTES {
-color: black;
+    text-align: center;
+    color: rgb(12, 10, 35);
+    padding: 10px;
+    background: radial-gradient(circle, #3700ff 0%, #12a5d2 95%);
+    }
+    .INGREDIENTES {
+    color: black;
+    text-align: center;
+    }
+.preparo {
+   text-align: center;
+   
+
 }
