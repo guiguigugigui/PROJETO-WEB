@@ -1,45 +1,27 @@
-.PUDIM {
-    text-align: center;
-    color: rgb(238, 238, 248);
-    padding: 10px;
-    background: radial-gradient(circle, #3300ff 0%, #12a5d2 95%);
-    border: none;
-    border-radius: 5rem;
-    animation: fadeInDown 2s;
-    }
-    .INGREDIENTES {
-    color: black;
-    text-align: center;
-    }
-.preparo {
-   text-align: center;
-   
-
-}
+/* Animação e estilos da receita de pudim */
 @keyframes fadeInDown {
- from {
-   opacity: 0;
-   transform: translatey(-30px);   
-}
- to {
-    opacity:1;
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
     transform: translateY(0);
- }
-
+  }
 }
 
-
-
-.requisitos {
-body{
-    transform: scale(100%);
+.PUDIM {
+  text-align: center;
+  color: rgb(238, 238, 248);
+  padding: 10px 24px;
+  background: radial-gradient(circle, #3300ff 0%, #12a5d2 95%);
+  border: none;
+  border-radius: 5rem;
+  animation: fadeInDown 2s ease-out;
 }
 
-
+.INGREDIENTES,
+.preparo {
+  text-align: center;
 }
-.fazer {
-body{
-    transform: scale(100%);
-};
 
-}
