@@ -1,82 +1,92 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receita para um pudim</title>
-   <link rel="stylesheet" href="style.css">
-  
-   
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 
-</head>
-<body>
-    <h1 class="PUDIM">Receita para um pudim</h1>
-    <h2 class="INGREDIENTES">Ingredientes para pudim:</h2>
-    <ul>
-        <div class="requisitos">
-        <li>leite condensado: 1 lata ou caixinha (395g)</li> 
-        <li>Leite integral: A mesma medida de lata/caixinha de leite condesado (395ml)</li>
-        <li>Ovos: 3 a 4 unidades (dependendo do tamanho)</li>
-        <li>Esssencia de baunilha (opcional): 1 colher de chá para dar um toque especial</li>
-        <li>Preparar a calda: Em uma panela, coloque 1 xícara de açúcar, derreta em fogo médio até ficar dourado, adicione a água quente com cuidado mexa até dissolver os torrões e engrossar, despeje em uma forma com furo centra, espalhe no fundo e nas laterais.</li>
-        <li>Faça a massa: Coloque os ovos no liquidificador, bata bem para tirar o cheiro, adicione o leite condensado, adicione o leite integral bata até ficar homogêneo, despeje essa mistura na forma caramelizada.</li>
-        <li>Asse em banho-maria: Cubra a forma com papel-alumínio (parte brilhante para dentro) coloque a forma dentro de outra assadeira com água, leve ao forno médio (180°C) deixe assar por cerca de 1 hora e 30 minutos.</li>
-        <li>Esfrie e gela: Retire do forno e deixe esfriar, leve à geladeira por cerca de 6 horas, passe uma faca nas bordas e desenforme.</li>
-        </div>
-    
-       
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Receita de Pudim" },
+      { name: "description", content: "Receita simples e deliciosa de pudim de leite condensado." },
+      { property: "og:title", content: "Receita de Pudim" },
+      { property: "og:description", content: "Aprenda a fazer um pudim de leite condensado fácil e saboroso." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
+  component: Index,
+});
 
+function Index() {
+  const [mensagem, setMensagem] = useState("");
 
+  const handleClick = () => {
+    setMensagem("Bom apetite! 🍮");
+  };
 
-        <h2 class="preparo">Como fazer:</h2>
-    <div class="fazer">
-    <li>Preparar a calda: Em uma panela, coloque 1 xícara de açúcar, derreta em fogo médio até ficar dourado, adicione a água quente com cuidado mexa até dissolver os torrões e engrossar, despeje em uma forma com furo centra, espalhe no fundo e nas laterais.</li>
-    <li>Faça a massa: Coloque os ovos no liquidificador, bata bem para tirar o cheiro, adicione o leite condensado, adicione o leite integral bata até ficar homogêneo, despeje essa mistura na forma caramelizada.</li>
-    <li>Asse em banho-maria: Cubra a forma com papel-alumínio (parte brilhante para dentro) coloque a forma dentro de outra assadeira com água, leve ao forno médio (180°C) deixe assar por cerca de 1 hora e 30 minutos.</li>
-    <li>Esfrie e gela: Retire do forno e deixe esfriar, leve à geladeira por cerca de 6 horas, passe uma faca nas bordas e desenforme.</li>
-    </div>
-   
+  return (
+    <main className="min-h-screen bg-background px-6 py-10">
+      <div className="mx-auto max-w-2xl space-y-8 text-center">
+        <h1 className="PUDIM text-3xl font-bold sm:text-4xl">
+          Receita para um Pudim
+        </h1>
 
-    </ul> 
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Meu Botão</title>
-        <style>
-            /* Estilo base do botão */
-            .botao-personalizado {
-                display: inline-block;
-                padding: 12px 28px;
-                font-size: 16px;
-                font-family: Arial, sans-serif;
-                font-weight: bold;
-                color: #ffffff; /* Texto branco */
-                background-color: #25d366; /* Fundo verde (estilo WhatsApp) */
-                border: none; /* Remove bordas padrão */
-            
-            }
-    
-            /* Efeito quando o usuário passa o mouse por cima */
-            .botao-personalizado:hover {
-                background-color: #128c7e; /* Verde mais escuro */
-                
-            }
-    
-            /* Efeito quando o usuário clica no botão */
-            .botao-personalizado:active {
-                transform: translateY(0); /* Volta o botão para a posição original */
-            }
-        </style>
-    </head>
-    <body>
-    
-        <!-- O BOTÃO AQUI -->
-        <a href="https://google.com" target="_blank" class="botao-personalizado">
+        <section className="INGREDIENTES space-y-4 rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-card-foreground">
+            Ingredientes
+          </h2>
+          <ul className="list-inside list-disc space-y-2 text-left text-foreground">
+            <li>1 lata ou caixinha de leite condensado (395g)</li>
+            <li>A mesma medida de leite integral (395ml)</li>
+            <li>3 a 4 ovos</li>
+            <li>1 colher de chá de essência de baunilha (opcional)</li>
+          </ul>
+        </section>
+
+        <section className="preparo space-y-4 rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <h2 className="text-xl font-semibold text-card-foreground">
+            Modo de Preparo
+          </h2>
+          <ol className="list-inside list-decimal space-y-4 text-left text-foreground">
+            <li>
+              <strong>Preparar a calda:</strong> Em uma panela, coloque 1 xícara
+              de açúcar e derreta em fogo médio até ficar dourado. Adicione a
+              água quente com cuidado, mexa até dissolver os torrões e
+              engrossar. Despeje em uma forma com furo central, espalhando no
+              fundo e nas laterais.
+            </li>
+            <li>
+              <strong>Faça a massa:</strong> Coloque os ovos no liquidificador
+              e bata bem. Adicione o leite condensado, o leite integral e a
+              baunilha. Bata até ficar homogêneo e despeje na forma
+              caramelizada.
+            </li>
+            <li>
+              <strong>Asse em banho-maria:</strong> Cubra a forma com
+              papel-alumínio (parte brilhante para dentro), coloque dentro de
+              outra assadeira com água e leve ao forno médio (180°C) por cerca
+              de 1 hora e 30 minutos.
+            </li>
+            <li>
+              <strong>Esfrie e gela:</strong> Retire do forno, deixe esfriar,
+              leve à geladeira por cerca de 6 horas, passe uma faca nas bordas e
+              desenforme.
+            </li>
+          </ol>
+        </section>
+
+        <div className="space-y-4">
+          <button
+            onClick={handleClick}
+            className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-base font-medium text-primary-foreground shadow transition-transform hover:scale-105 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          >
             Clique Aqui
-        </a>
-    
-    </body>
-    </html>
-    
+          </button>
+
+          {mensagem && (
+            <p className="text-lg font-semibold text-primary">{mensagem}</p>
+          )}
+        </div>
+      </div>
+    </main>
+  );
+}
+
